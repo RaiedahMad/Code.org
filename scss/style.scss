@@ -29,27 +29,54 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 11vh;
+    height: 9vh;
     width: 100%;
     overflow: hidden;
 }
+.logo{
+    display: flex;
+    align-items: center;
+}
 .logo a img{
-    margin-top:2px;
-    height: 8vh;
+    margin:2px 13px;
+    height: 7vh;
 }
 .nav-list ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+    margin: 0px 20px;
+    font-size: 15px;
 }
 .nav-list ul li{
     list-style: none;
+    color: $white;
+    font-family: para;
 }
 nav svg{
     color: $white;
     height: 8vh;
+    display: none;
 }
-
+.buttons button{
+    font-family: para;
+}
+.buttons .onebtn,.secbtn {
+    background-color: $primary-color;
+    border: 2px solid white;
+    border-radius: 4px;
+    margin: 0px 8px;
+    padding: 10px 20px;
+    color: $white;
+}
+.trdbtn{
+    border: 2px solid #FFFFFF;
+    border-radius: 4px;
+    margin: 0px 8px;
+    padding: 10px 20px;
+    color: $primary-color;
+}
                                 // Nav Media Queries
 
 @media (max-width:425px) {
@@ -64,6 +91,11 @@ nav svg{
     .buttons button{
         display: none;
     }
+    nav svg{
+        color: $white;
+        height: 8vh;
+        display: block;
+    }
 }
 
 
@@ -72,14 +104,13 @@ nav svg{
 .hero-section{
     height: 100%;
     width: 100%;
-    background-color: pink;
     overflow: hidden;
 }
 .hero-section .bg-img{
     background-image: url(../images/announcement-header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 85vh;
+    height: 65vh;
     width: 100%;
     display: flex;
     background-position: center;
@@ -88,8 +119,6 @@ nav svg{
     align-items: center;
     row-gap: 10px;
 }
-
-
 .hero-heading h2{
     font-family: heading;
     color: $white;
@@ -125,22 +154,20 @@ nav svg{
 .video a img{
     height: 23px;
 }
-
-
-
-
-
-
-
 // Main/Hero-section Media Queries
+@media (max-width:425px) {
+    .hero-section .bg-img{
+        height: 85vh;
+    }
+}
 
-
-//Main/section-2 styling
+//                                    Main/section-2 styling
 .section-2{
     height: 100%;
     width: 100%;
     padding: 3vh;
     overflow: hidden;
+    padding: 40px 0px;
 }
 .services-heading h4{
     color: $footer;
@@ -148,24 +175,28 @@ nav svg{
     font-family: para;
     font-size: 1.1rem;
     line-height: 30px;
+    margin-bottom: 40px ;
 }
 .serving{
     display: grid;
-    row-gap:50px;
-    column-gap: 20px;
+    grid-template-columns:  1fr 1fr 1fr 1fr 1fr;
+    // row-gap:50px;
+    // column-gap: 20px;
 }
 .serving h2{
     font-family: heading;
-    font-size: 2.75rem;
+    font-size: 3.75rem;
     color: $footer;
+    text-align: center;
 }
 .serving p{
     font-family: para;
     color: $footer;
     font-size: 14px;
     margin-top: 8px;
+    text-align: center;
 }
-//Main/section-2 styling Media Queries
+//                                Main section-2 styling Media Queries
 
 
 
@@ -181,6 +212,10 @@ nav svg{
     .serving p{
         text-align: center;
     }
+    .serving h2{
+        font-size: 2.75rem;
+        margin: 16px 0px;
+    }
 }
 
 
@@ -191,6 +226,8 @@ nav svg{
     padding: 50px 30px;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .bg-img{
     background-image: url(../images/banner-bg-horizontal-line-gaps.png);
@@ -200,21 +237,37 @@ nav svg{
 .section-3-headings h1{
     font-family: heading;
     font-size: 1.25rem;
+    color: $white;
+    text-align: center;
+    margin-bottom: 10px;
 }
 .section-3-headings p{
     font-family: para;
     font-size: 0.95rem;
+    text-align: center;
+    color: $white;
+    margin-bottom: 10px;
 }
-
-
-
-
-
-
-
-
-//Main/section-3 styling Media Queries
-
+.img-head{
+    display: flex;
+    justify-content: center;
+}
+.sec-3-imgs{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.sec-3-btn{
+    display: flex;
+    justify-content: center;
+}
+.sec-3-btn button{
+    padding: 13px 25px;
+    background-color: $white;
+    border: none;
+    border-radius: 4px;
+}
+//                            Main/section-3 styling Media Queries
 
 
 @media (max-width:425px) {
@@ -252,6 +305,49 @@ nav svg{
     overflow: hidden;
     line-height: 20px;
 }
+.section-cards{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr ;
+    column-gap: 10px;
+}
+.card-image{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+}  
+.card-image-1{
+    background-image: url(../images/2016_homepage_hocblock.jpg);
+    border-radius: 7px;
+  }
+  .card-image-2 {
+    background-image: url(../images/logo_tall_elementary.jpg);
+    border-radius: 7px;
+  }
+  .card-image-3 {
+    background-image: url(../images/logo_tall_map.jpg);
+    border-radius: 7px;
+  }
+  .card-image-4 {
+    background-image: url(../images/logo_tall_teacher2.jpg);
+    border-radius: 7px;
+}
+
+.card-main-text-practice {
+    height: 100%;
+  }
+  .card-main-text-practice {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card-main-text-practice h2,h3{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
 .card-main-text-practice h2,h3{
     font-family: heading;
     color: $white;
@@ -260,7 +356,14 @@ nav svg{
     color: $white;
     font-family:para ;
     line-height: 30px;
+    text-align: center;
 }
+.card-para{
+    text-align: center;
+    padding: 30px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
 .color-one h2 ,
 .color-one h3{
     background-color: #019fadcb;
@@ -296,6 +399,10 @@ nav svg{
 .card{
     margin-bottom: 10px;
 }
+.section-cards{
+    display: grid;
+    grid-template-columns:  1fr ;
+}
 .card-image{
     background-position: center;
     background-size: cover;
@@ -328,10 +435,6 @@ nav svg{
     width: 100%;
     padding: 10px;
   }
-  .card-para{
-    text-align: center;
-    padding: 30px;
-  }
 }
 
 
@@ -354,16 +457,26 @@ nav svg{
 }
 .projects{
     margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    justify-content: center;
 }
-
-
+.first-project img{
+    height: 105px;
+}
+.second-project img{
+    height: 105px;
+}
 
 //                            Main/section-4 styling Media Queries
 
 @media (max-width:425px) {
-    // .project{
-    //     margin-top: 10px;
-    // }
+    .projects{
+         margin-top: 10px;
+         display: grid;
+         grid-template-columns: 1fr ;
+     }
     .first-project{
         display: flex;
         justify-content: center;
@@ -433,10 +546,11 @@ nav svg{
 
 
 //                                      section-7 Styling
-.section-7{
+.section-7-mobile{
     background-color: #292F36;
     overflow: hidden;
     padding: 10px;
+    display: none;
 }
 .underline svg{
     height: 20px;
@@ -444,6 +558,18 @@ nav svg{
 //                            Main/section-6 styling Media Queries
 
 @media (max-width:425px){
+    .section-7-tab{
+        display: none;
+    }
+    .section-7-part-1{
+        display: none;
+    }
+    .inputandlogo{
+        display: none;
+    }
+    .section-7-mobile{
+        display: block;
+    }
     .input{
         display: flex;
         justify-content: center;
@@ -488,14 +614,39 @@ nav svg{
 }
 
 
+//                                                  .section-7-tab
 
+.section-7-tab{
+    background-color: $footer;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    height: 25vh;
+}
+.privacy-policy{
+    display: flex;
+    margin-bottom: 10px;
+}
 
-
-
-
-
-
-
+.privacy-policy h4{
+    color: $secondry-color;
+    font-family: heading;
+}
+.privacy-policy p{
+    color: $white;
+    font-family: para;
+}
+.text{
+    margin-bottom: 20px;
+}
+.text p{
+    color: $white;
+    font-family: para;
+}
+.section-7-img img{
+    height: 40px;
+}
 
 
 
